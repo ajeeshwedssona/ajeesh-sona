@@ -1109,71 +1109,6 @@ a {
   box-shadow: var(--shadow);
 }
 
-.venue-map {
-  position: relative;
-  min-height: 21rem;
-  overflow: hidden;
-  background:
-    radial-gradient(circle at 54% 43%, rgba(188, 141, 77, 0.2), transparent 23%),
-    linear-gradient(145deg, #d7c4a9, #e9dcc8);
-}
-
-.venue-map svg {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  fill: none;
-  stroke: rgba(59, 33, 56, 0.2);
-  stroke-width: 1.2;
-}
-
-.venue-map svg circle {
-  stroke: rgba(162, 87, 73, 0.16);
-}
-
-.venue-map > p {
-  position: absolute;
-  bottom: 1.5rem;
-  left: 1.5rem;
-  margin: 0;
-  color: var(--aubergine);
-  font-family: var(--display);
-  font-size: 2rem;
-}
-
-.venue-map small {
-  position: absolute;
-  top: 1.5rem;
-  right: 1.5rem;
-  color: var(--aubergine);
-  font-size: 0.6rem;
-  font-weight: 600;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-}
-
-.map-pin {
-  position: absolute;
-  top: 44%;
-  left: 60%;
-  display: grid;
-  width: 3.6rem;
-  height: 3.6rem;
-  transform: translate(-50%, -50%) rotate(45deg);
-  place-items: center;
-  border-radius: 50% 50% 50% 0;
-  background: var(--aubergine);
-  box-shadow: 0 14px 25px rgba(59, 33, 56, 0.28);
-}
-
-.map-pin span {
-  width: 0.9rem;
-  height: 0.9rem;
-  border: 2px solid var(--gold-light);
-  border-radius: 50%;
-}
-
 .venue-copy {
   padding: 3rem 1.5rem;
 }
@@ -1414,31 +1349,6 @@ a {
   background: var(--teal-deep);
 }
 
-.venue--reception .venue-map {
-  background:
-    radial-gradient(circle at 45% 41%, rgba(221, 189, 131, 0.18), transparent 23%),
-    linear-gradient(145deg, #486e69, #294946);
-}
-
-.venue--reception .venue-map svg {
-  stroke: rgba(243, 234, 219, 0.2);
-}
-
-.venue--reception .venue-map svg circle {
-  stroke: rgba(221, 189, 131, 0.16);
-}
-
-.venue--reception .venue-map > p,
-.venue--reception .venue-map small {
-  color: var(--ivory);
-}
-
-.map-pin--reception {
-  top: 41%;
-  left: 41%;
-  background: var(--terracotta);
-}
-
 .venue--reception .venue-copy h3,
 .venue--reception .venue-copy > p:not(.eyebrow) {
   color: var(--ivory);
@@ -1664,6 +1574,10 @@ a {
   gap: 1rem;
   max-width: 72rem;
   margin: 0 auto 2rem;
+}
+
+[data-host-only][hidden] {
+  display: none !important;
 }
 
 .save-card,
@@ -2290,14 +2204,6 @@ a {
     font-size: 1.28rem;
   }
 
-  .venue {
-    grid-template-columns: minmax(0, 1.05fr) minmax(20rem, 0.95fr);
-  }
-
-  .venue-map {
-    min-height: 33rem;
-  }
-
   .venue-copy {
     display: flex;
     flex-direction: column;
@@ -2352,7 +2258,7 @@ a {
     padding: 3.5rem;
   }
 
-  .share-grid {
+  html.host-mode .share-grid {
     grid-template-columns: 1.1fr 0.9fr;
   }
 
@@ -2549,9 +2455,5 @@ a {
   .floating-nav,
   .music-control {
     border: 1px solid ButtonText;
-  }
-
-  .map-pin {
-    border: 2px solid CanvasText;
   }
 }

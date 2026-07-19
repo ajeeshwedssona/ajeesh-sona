@@ -80,7 +80,19 @@ Both formats work:
 
 `guest` takes priority when both are present. Guest names are trimmed to 80 characters, control characters are removed, and the greeting is inserted with `textContent`.
 
-The discreet “Personalise a link” action in the sharing section opens a generator that can copy the resulting URL or prepare a WhatsApp message.
+The host-only “Personalise a link” action opens a generator that can copy the resulting URL or prepare a WhatsApp message.
+
+## Host-only invitation tools
+
+The “Send the invitation” card is hidden from normal guest pages. To use it, add `?host=1#share` to the deployed website address:
+
+```text
+https://ajeeshwedssona.github.io/ajeesh-sona/?host=1#share
+```
+
+Bookmark that host URL for yourself and do not send it to guests. Share, WhatsApp, Copy link, QR, and personalised-link actions automatically remove the `host` parameter from guest-facing URLs.
+
+This is visibility gating rather than password security. Because GitHub Pages is a static public site, a technically knowledgeable visitor could inspect the source and discover the host flag. Use authenticated hosting if the tools ever contain private data.
 
 ## Calendar details
 

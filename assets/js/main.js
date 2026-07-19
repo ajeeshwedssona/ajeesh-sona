@@ -38,9 +38,26 @@
     }
   }
 
+  function removeHostParameter(url) {
+    url.searchParams.delete("host");
+    return url;
+  }
+
+  function initHostMode() {
+    const current = getCurrentUrl();
+    const hasGuest = current.searchParams.has("guest") || current.searchParams.has("to");
+    const isHostMode = current.searchParams.get("host") === "1" && !hasGuest;
+
+    document.documentElement.classList.toggle("host-mode", isHostMode);
+    document.querySelectorAll("[data-host-only]").forEach((element) => {
+      element.hidden = !isHostMode;
+    });
+  }
+
   function getBaseInvitationUrl() {
     const current = getCurrentUrl();
     if (isWebUrl(current)) {
+      removeHostParameter(current);
       current.hash = "";
       return current.toString();
     }
@@ -50,6 +67,7 @@
   function getShareUrl() {
     const current = getCurrentUrl();
     if (isWebUrl(current)) {
+      removeHostParameter(current);
       current.hash = "";
       return current.toString();
     }
@@ -418,6 +436,7 @@
     showToast
   });
 
+  initHostMode();
   initConfiguredContent();
   initPersonalGreeting();
   initVenueLinks();

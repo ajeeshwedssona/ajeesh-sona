@@ -193,20 +193,6 @@
       </div>
 
       <article class="venue venue--wedding reveal" aria-labelledby="weddingVenueTitle">
-        <div class="venue-map" aria-hidden="true">
-          <svg viewBox="0 0 540 360" role="img">
-            <path d="M-20 275C70 205 115 330 203 246S354 119 560 172" />
-            <path d="M-4 315C76 249 150 350 237 285S388 168 553 218" />
-            <path d="M-28 224C73 150 146 262 222 194S365 85 572 112" />
-            <circle cx="326" cy="157" r="62" />
-            <circle cx="326" cy="157" r="96" />
-          </svg>
-          <div class="map-pin map-pin--wedding">
-            <span></span>
-          </div>
-          <p data-wedding-map-city>Oachira</p>
-          <small>Kerala · 01</small>
-        </div>
         <div class="venue-copy">
           <p class="eyebrow">Ceremony venue</p>
           <h3 id="weddingVenueTitle" data-wedding-venue>Royal Regency Convention Centre</h3>
@@ -246,20 +232,6 @@
       </div>
 
       <article class="venue venue--reception reveal" aria-labelledby="receptionVenueTitle">
-        <div class="venue-map" aria-hidden="true">
-          <svg viewBox="0 0 540 360" role="img">
-            <path d="M-20 116C94 188 118 62 221 139S363 260 566 205" />
-            <path d="M-7 72C92 139 151 22 244 91S389 210 556 160" />
-            <path d="M-20 165C85 228 152 120 237 187S386 304 564 246" />
-            <circle cx="220" cy="146" r="58" />
-            <circle cx="220" cy="146" r="91" />
-          </svg>
-          <div class="map-pin map-pin--reception">
-            <span></span>
-          </div>
-          <p data-reception-map-city>Mevaram</p>
-          <small>Kollam · 02</small>
-        </div>
         <div class="venue-copy">
           <p class="eyebrow eyebrow--light">Reception venue</p>
           <h3 id="receptionVenueTitle" data-reception-venue>Lalas Convention Centre</h3>
@@ -339,7 +311,7 @@
           </div>
         </article>
 
-        <article class="share-card reveal">
+        <article class="share-card reveal" data-host-only hidden>
           <p class="eyebrow eyebrow--light">Send the invitation</p>
           <h3>Share it with someone special.</h3>
           <p>Send the page directly, copy the link, or create a personalised guest invitation.</p>
@@ -418,7 +390,7 @@
   </button>
   <audio id="weddingMusic" loop preload="none"></audio>
 
-  <dialog class="guest-dialog" id="guestDialog" aria-labelledby="guestDialogTitle">
+  <dialog class="guest-dialog" id="guestDialog" aria-labelledby="guestDialogTitle" data-host-only hidden>
     <button class="dialog-close" id="closeGuestDialog" type="button" aria-label="Close personalised link generator">×</button>
     <p class="eyebrow">For the couple</p>
     <h2 id="guestDialogTitle">Create a guest link</h2>

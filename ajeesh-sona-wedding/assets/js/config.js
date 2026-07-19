@@ -2,7 +2,7 @@
   "use strict";
 
   // Replace SITE_URL after GitHub Pages is enabled. Keep the trailing slash.
-  const SITE_URL = "https://USERNAME.github.io/ajeesh-sona/";
+  const SITE_URL = "https://ajeeshwedssona.github.io/ajeesh-sona/";
 
   window.WEDDING_CONFIG = Object.freeze({
     siteUrl: SITE_URL,
